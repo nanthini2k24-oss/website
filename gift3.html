@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift 3 - Special Questions</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f7d4dc;
+    font-family:Arial;
+}
+
+.form-box{
+    width:400px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#ff3366;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#ff6666;
+    border:none;
+    border-radius:8px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Answer Honestly ❤️</h2>
+
+    <!-- Form 1: Send answers via email -->
+    <form action="https://formsubmit.co/nanthini2k24@gmail.com" method="POST">
+        <input type="text" name="Name" placeholder="Name" required>
+        <textarea name="Unnaku enna evalavu pudikum chlm?" placeholder="Unnaku enna evalavu pudikum chlm?" required></textarea>
+        <textarea name="Why you love me?" placeholder="Why do you love me?" required></textarea>
+        <textarea name="Eppo marriage pannekalam chlm?" placeholder="Eppo marriage pannekalam chlm?" required></textarea>
+        <textarea name="Future Promise" placeholder="Namma 1st call paesuna date sollu unnaku na kiss thae😁" required></textarea>
+                <textarea name="Future Promise" placeholder="Will you marry me" required></textarea>
+
+        <button type="submit">Send My Answers 💌</button>
+    </form>
+
+    <hr>
+
+    <!-- Form 2: Send a simple message via Google Apps Script -->
+     <form action="https://formsubmit.co/nanthini2k24@gmail.com" method="POST"></form>
+    <form id="gift3Form">
+        <label>Say something to me ❤️</label><br>
+        <textarea id="userMsg" rows="4" placeholder="Type here..."></textarea><br><br>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("gift3Form").addEventListener("submit", function(e){
+    e.preventDefault();
+    let msg = document.getElementById("userMsg").value;
+
+    // Replace YOUR_WEB_APP_URL with your actual Google Apps Script Web App URL
+    fetch("YOUR_WEB_APP_URL", {
+        method: "POST",
+        body: JSON.stringify({message: msg}),
+        headers: {"Content-Type":"application/json"}
+    })
+    .then(response => alert("Message sent successfully!"))
+    .catch(err => alert("Failed to send message"));
+});
+</script>
+
+</body>
+</html>
